@@ -48,14 +48,14 @@ export class PostagemService {
         })
     }
 
-    async create (postagem: Postagem): Promise<Postagem> {
+    async create(postagem: Postagem): Promise<Postagem> {
 
         await this.temaService.findById(postagem.tema.id)
-        
+
         return await this.postagemRepository.save(postagem);
     }
 
-    async update(postagem: Postagem): Promise<Postagem>{
+    async update(postagem: Postagem): Promise<Postagem> {
 
         await this.findById(postagem.id)
 
@@ -64,7 +64,7 @@ export class PostagemService {
         return await this.postagemRepository.save(postagem);
     }
 
-    async delete (id: number): Promise<DeleteResult>{
+    async delete(id: number): Promise<DeleteResult> {
 
         await this.findById(id)
 
