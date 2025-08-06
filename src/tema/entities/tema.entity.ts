@@ -6,11 +6,11 @@ import { Postagem } from "../../postagem/entities/postagem.entity";
 export class Tema {
 
     @PrimaryGeneratedColumn()
-    id: number
+    id: number;
 
     @IsNotEmpty()
     @Column({ length: 255, nullable: false })
-    descricao: string
+    descricao: string;
 
     @OneToMany(() => Postagem, (postagem) => postagem.tema)
     postagem: Postagem[]
